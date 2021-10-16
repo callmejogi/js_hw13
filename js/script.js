@@ -1,28 +1,29 @@
-let n = +prompt(`Введи число:`);
+function pow(num, degree = "1"){
+    console.log(typeof num);
+    console.log(typeof degree);
 
-let nDegree = +prompt("Введи необходимую степень");
 
-function powerOfNum(num, degree = 1){
-    num = n;
-    degree = nDegree;
-
-    if(num !== Number || degree !== Number){
+    if(typeof num !== "number" || typeof degree !== "number"){
         return `Error!Type a NUMBER!`;
     }
 
 
+    
 
     return num**degree;
-    
+
 }
 
+let num = +prompt(`Введи число:`);
 
-let num = n;
-let degree = nDegree;
+let degree = +prompt("Введи необходимую степень");
 
-console.log(typeof num);
-console.log(typeof degree);
+const result = alert(pow(num, degree));
 
-const result = alert(powerOfNum(num, degree));
+
+
+
+
+
 
 
