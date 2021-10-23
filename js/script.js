@@ -1,22 +1,23 @@
-function pow(num, degree){
+function isValidNumber(arg){
+    if (typeof arg === "number" && !isNaN(arg)){
+        return true;
+    }
 
-    if( num === null ||  isNaN(+num)) return `Error!arg1 is invalid!`;
-
-    if(degree === null || isNaN(+degree)) return `Error! arg2 is invalid!`;
-
-    if(degree === "") return pow(num, degree = "1");
-    
-    if(num === "") return `Write a number to be powered!`;
-
-
-    return (+num)**(+degree);
+    return false;
 }
 
-let num = prompt(`Введи число:`);
+function pow(num, degree = 1){
+    if(!isValidNumber(num)) return `arg1 is invalid!`;
+    if(!isValidNumber(degree)) return `arg2 is invalid!`;
 
-let degree = prompt("Введи необходимую степень");
+    return Math.pow(num,degree);
+}
 
-const result = alert(pow(num, degree));
+const result = alert((pow(+prompt('Number 1'),+prompt('Number 2'))));
+
+
+
+
 
 
 
